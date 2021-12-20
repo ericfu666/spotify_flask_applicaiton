@@ -16,7 +16,7 @@ Run the recommend.py file and follow the routes to see recommendations and trend
 I crawled and scraped the names and artist names of all Top-100 songs from 2010 to 2021 from the Billboard website. Having the basic information of the songs, I used Spotipy (a lightweight python library for accessing Spotify API that requires OAuth) to get the detailed information about audio features (tempo, danceability, valence, and energy) for each song. 
 
 # Data structure
-Because for the interaction part, users can choose different tempo, danceability, valence, and energy to get recommendation, I built four Bineary Search Trees for all the Billboard songs (one for each song attribute). To get the recommendations, range searches are performed for all four Binary Search Trees, and then an intersection operation is used on the four returned lists to get the songs that fit all four criteria.
+Because for the interaction part, users can choose different tempo, danceability, valence, and energy to get recommendations, I built four Binary Search Trees for all the Billboard songs (one for each song attribute). To get the recommendations, range searches are performed for all four Binary Search Trees, and then an intersection operation is used on the four returned lists to get the songs that fit all four criteria.
 
 # In this Repository
 <ul>
