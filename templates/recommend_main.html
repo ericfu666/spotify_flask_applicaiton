@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/html5reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+    <title>Billboard Song Recommendation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@600&family=Roboto:wght@300;400&family=Sora:wght@200;400&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="banner">
+        <h1>Welcome To Billboard Song Recommendation Website Made By Tianchi Fu</h1>
+    </div>
+    <div id="website_intro">
+        <p>On this website, you can get recommended songs from all the Billboard Top-100 songs from 2010 to 2021. You
+            can also check the trends of the audio features of songs over the years.</p>
+    </div>
+    <div id="song_recommend">
+        <h2>
+            Choose your song preferences
+        </h2>
+
+        <form action='/recommend_result' method='POST'>
+            <p>
+                1 How do you want the tempo to be?<br>
+                <input type="radio" name="tempo" value="low">Low
+                <input type="radio" name="tempo" value="medium" checked='checked'>Medium
+                <input type="radio" name="tempo" value="high">High
+            </p>
+            <p>
+                2 How do you want the vibe to be?<br>
+                <input type="radio" name="valence" value="low">Negative
+                <input type="radio" name="valence" value="medium" checked='checked'>Neutral
+                <input type="radio" name="valence" value="high">Positive
+            </p>
+            <p>
+                3 How much energy do you want from it?<br>
+                <input type="radio" name="energy" value="low">Low
+                <input type="radio" name="energy" value="medium" checked='checked'>Medium
+                <input type="radio" name="energy" value="high">High
+            </p>
+            <p>
+                4 How much do you want to dance to it?<br>
+                <input type="radio" name="danceability" value="low">Not much
+                <input type="radio" name="danceability" value="medium" checked='checked'>Medium
+                <input type="radio" name="danceability" value="high">Very much
+            </p>
+            <input type='submit' value='Get Recommendation' />
+        </form>
+
+    </div>
+
+    <div id="trend" style="width: 100%; margin:20px auto;font-size: 2.2vw;text-align: center;background-color: rgb(49, 49, 49); color:white; padding: 10px;">
+        <h2 style="font-size:3.2vw; margin:8px;font-weight: 500;">
+            Check song trend from 2010 to 2021
+        </h2>
+        <form action='/trend_result' method='POST'>
+            <p style="margin:15px;">
+                Which song attribute do you want to check?
+                <select name="attribute">
+                    <option value="tempo" selected="selected">Tempo</option>
+                    <option value="valence">Valence</option>
+                    <option value="danceability">Danceability</option>
+                    <option value="energy">Energy</option>
+                </select>
+            </p>
+            <input type='submit' value='Get Trend' />
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/html5reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+	<title>Billboard Song Trend (Results)</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@600&family=Roboto:wght@300;400&family=Sora:wght@200;400&family=Source+Sans+Pro&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<h1 style="text-align: center;"> Here is the graph!</h1>
+	{{plot_div | safe}}
+	<a href="/" style="margin-top: 20px; margin-bottom: 20px;">Back to Main Page</a>
+
+</body>
+
+</html>
